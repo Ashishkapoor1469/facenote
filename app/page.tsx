@@ -2,18 +2,20 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 export default function HomePage() {
+  const acc = false;
   return (
     <div className="relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden p-4 bg-background-light dark:bg-background-dark font-display bg-purple-500/20">
       {/* ===== HEADER ===== */}
       <header className="absolute top-0 right-0 z-30 p-4">
         <div className="flex items-center gap-2">
-          <button className="rounded-full bg-black/5 px-4 py-2 text-sm font-bold text-black/70 transition-colors hover:bg-black/10 dark:bg-white/10 dark:text-white/80 dark:hover:bg-white/20">
+         <Link href={"/login"}> <button className="rounded-full bg-black/5 px-4 py-2 text-sm font-bold text-black/70 transition-colors hover:bg-black/10 dark:bg-white/10 dark:text-white/80 dark:hover:bg-white/20">
             Login
-          </button>
-          <button className="rounded-full bg-primary px-4 py-2 text-sm font-bold text-white shadow-[0_0_15px_theme(colors.primary/0.4)] transition-shadow hover:shadow-[0_0_25px_theme(colors.primary/0.6)]">
+          </button></Link>
+          <Link href={"/signin"}><button className="rounded-full bg-primary px-4 py-2 text-sm font-bold text-white shadow-[0_0_15px_theme(colors.primary/0.4)] transition-shadow hover:shadow-[0_0_25px_theme(colors.primary/0.6)]">
             Sign Up
-          </button>
+          </button></Link> 
         </div>
       </header>
 
@@ -77,9 +79,9 @@ export default function HomePage() {
         </p>
 
         <div className="w-full max-w-xs">
-          <button className="flex w-full items-center justify-center overflow-hidden rounded-full h-12 px-5 bg-primary text-white text-base font-bold shadow-[0_0_20px_theme(colors.primary/0.5)] transition-shadow hover:shadow-[0_0_30px_theme(colors.primary/0.7)]">
-            <span className="truncate px-8 py-2 bg-purple-600 hover:bg-purple-500 cursor-pointer border-black rounded-2xl">Share Your Link</span>
-          </button>
+          <Link href={acc?"/profile":"/login"}><button className="flex w-full items-center justify-center overflow-hidden rounded-full h-12 px-5 bg-primary text-white text-base font-bold shadow-[0_0_20px_theme(colors.primary/0.5)] transition-shadow hover:shadow-[0_0_30px_theme(colors.primary/0.7)]">
+           <span className="truncate px-8 py-2 bg-purple-600 hover:bg-purple-500 cursor-pointer border-black rounded-2xl">Share Your Link</span>
+          </button></Link>
         </div>
 
         <p className="text-black/60 text-sm font-normal pt-8 dark:text-white/50">
